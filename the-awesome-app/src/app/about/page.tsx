@@ -1,4 +1,6 @@
-export default function About() {
+export default async function About() {
+    await new Promise(resolve => setTimeout(resolve,3000));
+    console.log("Rendering about....")
     return (
         <div className="alert alert-info">
             <h4>Nex.js Training Application</h4>

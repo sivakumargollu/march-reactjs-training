@@ -30,7 +30,7 @@ export default function Login() {
         document.title = document.title + " Login "
     },[])
 
-    async function handleLogin(event:SubmitEvent<HTMLFormElement>) {
+    async function handleLogin(event:SubmitEvent) {
         event.preventDefault()
         if(username && password){
         let url = "http://localhost:9000/login";
@@ -61,7 +61,7 @@ export default function Login() {
 
             {message ? <div className="alert alert-warning"> {message}</div> : null}
 
-            <form onSubmit={handleLogin}>
+            <form onSubmit={() => handleLogin}>
                 <div className="form-group">
                     <label htmlFor="username">UserName</label>
                     <input 

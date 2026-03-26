@@ -19,10 +19,10 @@ export default function EditProducts() {
     useEffect(()=>{
         readProdctInfo()
     },[product?.id])
-    function saveProductEdit(product: Product | undefined) {
+    function saveProductEdit(product?: Product) {
        //Implement axios call
     }
-    function cancelProductEdit(product:Product) {
+    function cancelProductEdit(product?:Product) {
         //route backt o list products
     }
 

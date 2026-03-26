@@ -1,12 +1,12 @@
 export type AuthState= {
-    isAuthenticate:boolean;
+    isAuthenticated:boolean;
     username:string;
     accessToken:string;
     refreshToken:string
 }
 
 const initialState : AuthState = {
-    isAuthenticate:false,
+    isAuthenticated:false,
     username:"",
     accessToken: "",
     refreshToken: ""

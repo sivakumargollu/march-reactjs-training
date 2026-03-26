@@ -7,6 +7,6 @@ export default function Home() {
       <h2>React Next.js Applications </h2>
 
       <Counter counter={5}/>
-   </div>
+     </div>
    )
 }

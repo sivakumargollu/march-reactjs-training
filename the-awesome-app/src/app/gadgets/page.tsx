@@ -1,23 +1,24 @@
 'use client'
 import { useProducts } from '@/hooks/useProducts';
 import { Product } from '@/models/Product';
+import { AppDispatch } from '@/redux/store';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 
 function GadgetStore(){
 
-    const [products, setProducts] = useProducts();
-    
+    const {products, setProducts} = useProducts();
+    const dispatch = useDispatch<AppDispatch>()
     
     
     function addToCart(product: Product): void {
-        
     }
 
     function renderProducts() {
 
-        const productsView =  products.map((item) => {
+        const productsView =  products.map((item:Product) => {
            
 
             return (

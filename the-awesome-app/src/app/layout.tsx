@@ -1,13 +1,14 @@
 'use client'  
 
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import AppBar from "@/components/appbar";
+import ReduxProvider from "@/redux/ReduxProvider";
 import { Provider } from "react-redux";
 import { store } from "@/redux/store";
-import ReduxProvider from "@/redux/ReduxProvider";
+import { AppThemeContext, AppThemeContextProvider } from "@/context/AppThemeContext";
+import { useContext, useState } from "react";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +19,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 
 //export const metadata: Metadata = {
   //title: "Create Next App",
@@ -32,14 +34,16 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body>
-      <Provider store={store} children={undefined}>
-        <div className="container">
-              <AppBar/>
-              <main>
-                {children}
-              </main>
-       </div>
-      </Provider>
+      <ReduxProvider>
+        <AppThemeContextProvider>
+            <div className="container">
+                          <AppBar/>
+                          <main>
+                            {children}
+                          </main>
+                  </div>
+        </AppThemeContextProvider>
+      </ReduxProvider>
    
      </body>
     </html>

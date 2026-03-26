@@ -17,7 +17,7 @@ export default function ListProducts(){
     const router = useRouter()
     let [isMessageAvailable,setIsMessageAvailable] = useState("")
     useTitle("List products")
-    const [products,setProducts,fetchProducts] = useProducts<Product[]>([])
+    const {products,setProducts} = useProducts()
     const deleteProduct = useCallback(function deleteProduct(product:Product){
         try{
              let id = product.id
